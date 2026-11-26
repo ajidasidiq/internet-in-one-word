@@ -9,6 +9,9 @@ import os
 
 WORD = "brainrot"
 
+# Validation gate: the bounty takes exactly one word, no spaces.
+assert WORD and not any(ch.isspace() for ch in WORD), "entry must be a single word"
+
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
